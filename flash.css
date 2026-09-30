@@ -1,0 +1,53 @@
+/* 动态搜索框 */
+.search-container {
+	display: flex;
+	align-items: center;
+	width: 40px;                /* 默认只显示图标宽度 */
+	border-radius: 20px;
+	
+	transition: width 0.3s ease;
+	overflow: hidden;           /* 隐藏超出部分 */
+	cursor: pointer;
+}
+
+.search-container:hover {
+	width: 200px;               /* 悬停时展开宽度 */
+}
+
+.search-icon {
+	font-size: 20px;
+	padding: 8px 10px;
+	flex-shrink: 0;
+}
+
+.search-input {
+	color: #ffffff;
+	flex: 1;
+	border: none;
+	outline: none;
+	background: transparent;
+	padding: 8px 8px 8px 0;
+	font-size: 14px;
+	opacity: 0;                 /* 默认透明不可见 */
+	transition: opacity 0.2s ease 0.1s; /* 延迟显示，避免闪烁 */
+}
+
+.search-container:hover .search-input {
+	opacity: 1;                 /* 悬停时显示 */
+}
+/* 动态搜索框 ↑ */
+
+
+/* 侧边栏收纳动画 */
+/* 基础样式 */
+.navbar-side {
+	position: fixed;  /* 绝对定位 */
+	padding: 10px;
+	margin: 10px;
+	display: flex;
+	flex-direction: column; /* 保持之前的反向排列 */
+	width: 250px;   /* 固定宽度防止变宽 */
+	list-style-type: none;
+	color: white;
+}
+

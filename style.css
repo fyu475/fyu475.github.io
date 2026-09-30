@@ -1,0 +1,249 @@
+/* 主体 */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('asset/image/background.jpg');
+    margin: 0;
+    padding: 0;
+    cursor: default;  /* 自定义光标 */
+}
+
+/* 顶部导航栏 */
+.navbar-top {
+    background-color: #1E293A;
+    height: 32px;
+    padding: 10px;
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  /* 阴影 */
+    align-items: center;
+}
+.navbar-top .navlinks {
+    display: flex;
+    margin: 0 auto;
+}
+
+/* 导航栏图标 */
+.bar-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* 顶栏上的 侧边栏唤出按钮 */
+.navbar-top .navbar-toggle {
+    scale: 1.1;
+    background: none;
+    border: none;
+    padding: 7px;
+    transition: all 0.3s ease;
+}
+
+.navbar-top .navbar-toggle:hover {
+    transform-origin: left top;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* 侧边导航栏 */
+/* --> flash.css <-- */
+
+/* 导入字体 */
+@font-face {
+    font-family: 'THEROOTS';
+    src: url('asset/font/THEROOTS.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OdinRounded';
+    src: url('asset/font/Odin-Rounded-Bold.otf') format('opentype');
+}
+
+/* 侧边导航栏 */
+.navbar-side {
+    transition: all 0.25s ease;  /* 线性 过渡效果 */
+}
+.navbar-side.close {
+    transform: translateX(-99%);  /* 向左完全隐藏 */
+    transition: transform 0.25s ease;
+}
+.navbar-side .content {  /* 居中简介 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    /* font-family: OdinRounded; */
+    
+}
+.navbar-side .title {  /* 标题(Nomo)样式 */
+    font-size: x-large;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: #fdfccb8f 0px 4px 8px;
+    transition: all 0.2s ease;
+}
+.navbar-side .title:hover {
+    text-shadow: #fdfccb8f 0px 11px 11px, #ff9bc4dc 0px 0px 10px;
+    scale: 1.07;
+    transition: all 0.3s ease;
+}
+.navbar-side .intro {  /* 简介样式 */
+    font-size: small;
+    color: rgba(245, 245, 245, 0.897);
+    margin-top: 1px;
+}
+.navbar-side .navlinks {  /* 导航链接容器 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.navbar-side a {  /* 链接样式 */
+    display: flex;
+    width: fit-content;  /* 根据内容调整宽度 */
+    margin: 0;
+    margin-left: 5px;
+    color: #f0f0f0;
+    text-decoration: none;
+    padding: 5px 11px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.navbar-side a:hover {
+    display: flex;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 20px rgba(82, 82, 81, 0.2);
+    background: none;
+    /*
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    */
+    transform: scale(1.05);
+    transform-origin: left;
+    transition: all 0.3s ease;
+}
+
+
+/* 分割线样式 */
+hr {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.938);
+    width: 75%;
+    text-align: center;
+    box-shadow: #01837850 0px 2px 5px;
+
+    transition: all 0.1s ease;
+}
+hr:hover {
+    transform: scale(1.08);
+    transition: all 0.1s ease;
+}
+
+/* 磨砂玻璃效果 */
+.frosted-glass {
+    background: rgba(207, 207, 207, 0.384);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 8px;
+    border: 1px solid rgba(224, 224, 224, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 链接样式 */
+a {
+    margin: auto;
+    color: #f8f8f8;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 20px rgba(82, 82, 81, 0.2);
+    background-color: rgba(211, 211, 211, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* 彩虹
+.flowing-rainbow {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.flowing-rainbow::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #ff0000, #ff7f00, #ffff00, #00ff00, 
+        #0000ff, #4b0082, #8f00ff, #ff0000
+    );
+    background-size: 400% 400%;
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.flowing-rainbow:hover::before {
+    opacity: 1;
+    animation: rainbowFlow 3s ease infinite;
+}
+
+@keyframes rainbowFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.flowing-rainbow:hover {
+    backdrop-filter: blur(15px);
+    transform: scale(1.02);
+}
+*/
+
+/* 头像样式 */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: #1E293A 0px 4px 8px;
+    display: block;
+    margin:auto;
+}
+
+.avatar:hover {
+    transform:rotate3d(0, 1, 0, 360deg) scale(1.05);
+    transition: transform 1.4s ease-in-out;
+    box-shadow: none;
+    /* box-shadow: #1E293A 0px 4px 8px; */
+}
+
+/*
+searcher {
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+searcher:hover {
+    transform: scale(1.45);
+    transition: transform 0.3s ease;
+}
+*/

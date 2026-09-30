@@ -1,0 +1,58 @@
+/* 主题风格 */
+body {
+    background-color: rgba(255, 255, 255, 0.863);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    /*justify-content: center;*/
+    /* align-items: center; */
+    height: 100vh;
+    margin: 0;
+}
+
+/* 标题样式 */
+h1 {
+    color:cornflowerblue;
+    text-align: center;
+}
+
+/* 段落样式 */
+p {
+    color: #333;
+    background-color: rgb(220, 133, 255);
+}
+
+/* 卡片样式 */
+.card {
+    background-color:white;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.conc {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* 顶部导航栏样式 */
+.navbar {
+    background-color: #07192e;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: rgba(255, 255, 255, 0.89);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
