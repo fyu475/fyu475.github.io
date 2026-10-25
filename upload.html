@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>文件上传</title>
+</head>
+<body>
+  <h3>上传文件到仓库</h3>
+  <input type="password" id="pass" placeholder="输入通行密码" />
+  <input type="file" id="fileInput" />
+  <button id="btn">上传</button>
+  <pre id="log"></pre>
+
+  <script>
+    const WORKER_URL = "https://my-upload-worker.你的子域.workers.dev"; // 替换为你的 Worker 地址
+
+    document.getElementById("btn").onclick = async () => {
+      const file = document.getElementById("fileInput").files[0];
+      if (!file) return alert("请选择文件");
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const log = document.getElementById("log");
+      log.textContent = "上传中...";
+
+      try {
+        const res = await fetch(WORKER_URL, {
+          method: "POST",
+          headers: {
+            "X-Pass": document.getElementById("pass").value,
+          },
+          body: formData,
+        });
+        const data = await res.json();
+        log.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        log.textContent = "请求失败: " + err.message;
+      }
+    };
+  </script>
+</body>
+</html>
